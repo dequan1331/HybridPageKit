@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B931915420A6D12A0014049C /* HybridPageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B931915220A6D12A0014049C /* HybridPageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B931919220A6D1510014049C /* HPKViewConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B931915B20A6D1510014049C /* HPKViewConfig.m */; };
+		B931919420A6D1510014049C /* HPKViewConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B931915D20A6D1510014049C /* HPKViewConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B931919520A6D1510014049C /* HPKURLProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B931915F20A6D1510014049C /* HPKURLProtocol.h */; };
+		B931919620A6D1510014049C /* HPKURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916020A6D1510014049C /* HPKURLProtocol.m */; };
+		B931919720A6D1510014049C /* HPKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = B931916120A6D1510014049C /* HPKWebView.h */; };
+		B931919820A6D1510014049C /* HPKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916220A6D1510014049C /* HPKWebView.m */; };
+		B931919920A6D1510014049C /* HPKWebViewPool.h in Headers */ = {isa = PBXBuildFile; fileRef = B931916320A6D1510014049C /* HPKWebViewPool.h */; };
+		B931919A20A6D1510014049C /* HPKWebViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916420A6D1510014049C /* HPKWebViewPool.m */; };
+		B931919B20A6D1510014049C /* WKWebView + DeleteMenuItems.h in Headers */ = {isa = PBXBuildFile; fileRef = B931916620A6D1510014049C /* WKWebView + DeleteMenuItems.h */; };
+		B931919C20A6D1510014049C /* WKWebView + DeleteMenuItems.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916720A6D1510014049C /* WKWebView + DeleteMenuItems.m */; };
+		B931919D20A6D1510014049C /* WKWebView + ExternalNavigationDelegates.h in Headers */ = {isa = PBXBuildFile; fileRef = B931916820A6D1510014049C /* WKWebView + ExternalNavigationDelegates.h */; };
+		B931919E20A6D1510014049C /* WKWebView + ExternalNavigationDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916920A6D1510014049C /* WKWebView + ExternalNavigationDelegates.m */; };
+		B931919F20A6D1510014049C /* WKWebView + SafeClearCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B931916A20A6D1510014049C /* WKWebView + SafeClearCache.h */; };
+		B93191A020A6D1510014049C /* WKWebView + SafeClearCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916B20A6D1510014049C /* WKWebView + SafeClearCache.m */; };
+		B93191A120A6D1510014049C /* WKWebView + SafeCookies.h in Headers */ = {isa = PBXBuildFile; fileRef = B931916C20A6D1510014049C /* WKWebView + SafeCookies.h */; };
+		B93191A220A6D1510014049C /* WKWebView + SafeCookies.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916D20A6D1510014049C /* WKWebView + SafeCookies.m */; };
+		B93191A320A6D1510014049C /* WKWebView + SafeEvaluateJS.h in Headers */ = {isa = PBXBuildFile; fileRef = B931916E20A6D1510014049C /* WKWebView + SafeEvaluateJS.h */; };
+		B93191A420A6D1510014049C /* WKWebView + SafeEvaluateJS.m in Sources */ = {isa = PBXBuildFile; fileRef = B931916F20A6D1510014049C /* WKWebView + SafeEvaluateJS.m */; };
+		B93191A520A6D1510014049C /* WKWebView + SafeScrollTo.h in Headers */ = {isa = PBXBuildFile; fileRef = B931917020A6D1510014049C /* WKWebView + SafeScrollTo.h */; };
+		B93191A620A6D1510014049C /* WKWebView + SafeScrollTo.m in Sources */ = {isa = PBXBuildFile; fileRef = B931917120A6D1510014049C /* WKWebView + SafeScrollTo.m */; };
+		B93191A720A6D1510014049C /* WKWebView + SupportProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B931917220A6D1510014049C /* WKWebView + SupportProtocol.h */; };
+		B93191A820A6D1510014049C /* WKWebView + SupportProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = B931917320A6D1510014049C /* WKWebView + SupportProtocol.m */; };
+		B93191A920A6D1510014049C /* WKWebView + SyncConfigUA.h in Headers */ = {isa = PBXBuildFile; fileRef = B931917420A6D1510014049C /* WKWebView + SyncConfigUA.h */; };
+		B93191AA20A6D1510014049C /* WKWebView + SyncConfigUA.m in Sources */ = {isa = PBXBuildFile; fileRef = B931917520A6D1510014049C /* WKWebView + SyncConfigUA.m */; };
+		B93191AB20A6D1510014049C /* WKWebViewExtensionsDef.h in Headers */ = {isa = PBXBuildFile; fileRef = B931917620A6D1510014049C /* WKWebViewExtensionsDef.h */; };
+		B93191BB20A6D1510014049C /* HPKDefs.h in Headers */ = {isa = PBXBuildFile; fileRef = B931918720A6D1510014049C /* HPKDefs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B93191BE20A6D1510014049C /* HPKContainerScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = B931918B20A6D1510014049C /* HPKContainerScrollView.h */; };
+		B93191BF20A6D1510014049C /* HPKContainerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B931918C20A6D1510014049C /* HPKContainerScrollView.m */; };
+		B93191C020A6D1510014049C /* HPKWebViewHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B931918D20A6D1510014049C /* HPKWebViewHandler.h */; };
+		B93191C120A6D1510014049C /* HPKWebViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B931918E20A6D1510014049C /* HPKWebViewHandler.m */; };
+		B9FC323520A938D30092676D /* HPKComponentViewPool.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC323320A938D30092676D /* HPKComponentViewPool.h */; };
+		B9FC323620A938D30092676D /* HPKComponentViewPool.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC323420A938D30092676D /* HPKComponentViewPool.m */; };
+		B9FC323D20A9397B0092676D /* HPKComponentHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC323B20A9397B0092676D /* HPKComponentHandler.h */; };
+		B9FC323E20A9397B0092676D /* HPKComponentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC323C20A9397B0092676D /* HPKComponentHandler.m */; };
+		B9FC324120A939BD0092676D /* HPKDealgateDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC323F20A939BD0092676D /* HPKDealgateDispatcher.h */; };
+		B9FC324220A939BD0092676D /* HPKDealgateDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC324020A939BD0092676D /* HPKDealgateDispatcher.m */; };
+		B9FC324520A939E30092676D /* HPKComponentContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC324320A939E30092676D /* HPKComponentContext.h */; };
+		B9FC324620A939E30092676D /* HPKComponentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC324420A939E30092676D /* HPKComponentContext.m */; };
+		B9FC324D20A93A3D0092676D /* HPKModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC324B20A93A3D0092676D /* HPKModelProtocol.h */; };
+		B9FC325120A93A900092676D /* HPKBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC324F20A93A900092676D /* HPKBaseViewController.h */; };
+		B9FC325220A93A900092676D /* HPKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325020A93A900092676D /* HPKBaseViewController.m */; };
+		B9FC325520A93B4D0092676D /* UIKit + HPK.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC325320A93B4D0092676D /* UIKit + HPK.h */; };
+		B9FC325620A93B4D0092676D /* UIKit + HPK.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325420A93B4D0092676D /* UIKit + HPK.m */; };
+		B9FC325A20A94A6D0092676D /* HPKAbstractViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */; };
+		B9FC325B20A94A6D0092676D /* HPKAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325920A94A6D0092676D /* HPKAbstractViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B931914F20A6D12A0014049C /* HybridPageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HybridPageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B931915220A6D12A0014049C /* HybridPageKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HybridPageKit.h; sourceTree = "<group>"; };
+		B931915320A6D12A0014049C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B931915B20A6D1510014049C /* HPKViewConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPKViewConfig.m; sourceTree = "<group>"; };
+		B931915D20A6D1510014049C /* HPKViewConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPKViewConfig.h; sourceTree = "<group>"; };
+		B931915F20A6D1510014049C /* HPKURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPKURLProtocol.h; sourceTree = "<group>"; };
+		B931916020A6D1510014049C /* HPKURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPKURLProtocol.m; sourceTree = "<group>"; };
+		B931916120A6D1510014049C /* HPKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPKWebView.h; sourceTree = "<group>"; };
+		B931916220A6D1510014049C /* HPKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPKWebView.m; sourceTree = "<group>"; };
+		B931916320A6D1510014049C /* HPKWebViewPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPKWebViewPool.h; sourceTree = "<group>"; };
+		B931916420A6D1510014049C /* HPKWebViewPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPKWebViewPool.m; sourceTree = "<group>"; };
+		B931916620A6D1510014049C /* WKWebView + DeleteMenuItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + DeleteMenuItems.h"; sourceTree = "<group>"; };
+		B931916720A6D1510014049C /* WKWebView + DeleteMenuItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + DeleteMenuItems.m"; sourceTree = "<group>"; };
+		B931916820A6D1510014049C /* WKWebView + ExternalNavigationDelegates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + ExternalNavigationDelegates.h"; sourceTree = "<group>"; };
+		B931916920A6D1510014049C /* WKWebView + ExternalNavigationDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + ExternalNavigationDelegates.m"; sourceTree = "<group>"; };
+		B931916A20A6D1510014049C /* WKWebView + SafeClearCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + SafeClearCache.h"; sourceTree = "<group>"; };
+		B931916B20A6D1510014049C /* WKWebView + SafeClearCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + SafeClearCache.m"; sourceTree = "<group>"; };
+		B931916C20A6D1510014049C /* WKWebView + SafeCookies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + SafeCookies.h"; sourceTree = "<group>"; };
+		B931916D20A6D1510014049C /* WKWebView + SafeCookies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + SafeCookies.m"; sourceTree = "<group>"; };
+		B931916E20A6D1510014049C /* WKWebView + SafeEvaluateJS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + SafeEvaluateJS.h"; sourceTree = "<group>"; };
+		B931916F20A6D1510014049C /* WKWebView + SafeEvaluateJS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + SafeEvaluateJS.m"; sourceTree = "<group>"; };
+		B931917020A6D1510014049C /* WKWebView + SafeScrollTo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + SafeScrollTo.h"; sourceTree = "<group>"; };
+		B931917120A6D1510014049C /* WKWebView + SafeScrollTo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + SafeScrollTo.m"; sourceTree = "<group>"; };
+		B931917220A6D1510014049C /* WKWebView + SupportProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + SupportProtocol.h"; sourceTree = "<group>"; };
+		B931917320A6D1510014049C /* WKWebView + SupportProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + SupportProtocol.m"; sourceTree = "<group>"; };
+		B931917420A6D1510014049C /* WKWebView + SyncConfigUA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKWebView + SyncConfigUA.h"; sourceTree = "<group>"; };
+		B931917520A6D1510014049C /* WKWebView + SyncConfigUA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKWebView + SyncConfigUA.m"; sourceTree = "<group>"; };
+		B931917620A6D1510014049C /* WKWebViewExtensionsDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKWebViewExtensionsDef.h; sourceTree = "<group>"; };
+		B931918720A6D1510014049C /* HPKDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPKDefs.h; sourceTree = "<group>"; };
+		B931918B20A6D1510014049C /* HPKContainerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPKContainerScrollView.h; sourceTree = "<group>"; };
+		B931918C20A6D1510014049C /* HPKContainerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPKContainerScrollView.m; sourceTree = "<group>"; };
+		B931918D20A6D1510014049C /* HPKWebViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPKWebViewHandler.h; sourceTree = "<group>"; };
+		B931918E20A6D1510014049C /* HPKWebViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPKWebViewHandler.m; sourceTree = "<group>"; };
+		B9FC323320A938D30092676D /* HPKComponentViewPool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKComponentViewPool.h; sourceTree = "<group>"; };
+		B9FC323420A938D30092676D /* HPKComponentViewPool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKComponentViewPool.m; sourceTree = "<group>"; };
+		B9FC323B20A9397B0092676D /* HPKComponentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKComponentHandler.h; sourceTree = "<group>"; };
+		B9FC323C20A9397B0092676D /* HPKComponentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKComponentHandler.m; sourceTree = "<group>"; };
+		B9FC323F20A939BD0092676D /* HPKDealgateDispatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKDealgateDispatcher.h; sourceTree = "<group>"; };
+		B9FC324020A939BD0092676D /* HPKDealgateDispatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKDealgateDispatcher.m; sourceTree = "<group>"; };
+		B9FC324320A939E30092676D /* HPKComponentContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKComponentContext.h; sourceTree = "<group>"; };
+		B9FC324420A939E30092676D /* HPKComponentContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKComponentContext.m; sourceTree = "<group>"; };
+		B9FC324B20A93A3D0092676D /* HPKModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKModelProtocol.h; sourceTree = "<group>"; };
+		B9FC324F20A93A900092676D /* HPKBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKBaseViewController.h; sourceTree = "<group>"; };
+		B9FC325020A93A900092676D /* HPKBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKBaseViewController.m; sourceTree = "<group>"; };
+		B9FC325320A93B4D0092676D /* UIKit + HPK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKit + HPK.h"; sourceTree = "<group>"; };
+		B9FC325420A93B4D0092676D /* UIKit + HPK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIKit + HPK.m"; sourceTree = "<group>"; };
+		B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKAbstractViewController.h; sourceTree = "<group>"; };
+		B9FC325920A94A6D0092676D /* HPKAbstractViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKAbstractViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B931914B20A6D12A0014049C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B931914520A6D12A0014049C = {
+			isa = PBXGroup;
+			children = (
+				B931915120A6D12A0014049C /* HybridPageKit */,
+				B931915020A6D12A0014049C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B931915020A6D12A0014049C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B931914F20A6D12A0014049C /* HybridPageKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B931915120A6D12A0014049C /* HybridPageKit */ = {
+			isa = PBXGroup;
+			children = (
+				B931915220A6D12A0014049C /* HybridPageKit.h */,
+				B931915D20A6D1510014049C /* HPKViewConfig.h */,
+				B931918720A6D1510014049C /* HPKDefs.h */,
+				B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */,
+				B931915E20A6D1510014049C /* ReusableWebView */,
+				B931917720A6D1510014049C /* ScrollReuseHandler */,
+				B931918820A6D1510014049C /* HybridViewController */,
+				B931915320A6D12A0014049C /* Info.plist */,
+			);
+			path = HybridPageKit;
+			sourceTree = "<group>";
+		};
+		B931915E20A6D1510014049C /* ReusableWebView */ = {
+			isa = PBXGroup;
+			children = (
+				B931916520A6D1510014049C /* WKWebViewExtensions */,
+				B931915F20A6D1510014049C /* HPKURLProtocol.h */,
+				B931916020A6D1510014049C /* HPKURLProtocol.m */,
+				B931916120A6D1510014049C /* HPKWebView.h */,
+				B931916220A6D1510014049C /* HPKWebView.m */,
+				B931916320A6D1510014049C /* HPKWebViewPool.h */,
+				B931916420A6D1510014049C /* HPKWebViewPool.m */,
+			);
+			path = ReusableWebView;
+			sourceTree = "<group>";
+		};
+		B931916520A6D1510014049C /* WKWebViewExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				B931916620A6D1510014049C /* WKWebView + DeleteMenuItems.h */,
+				B931916720A6D1510014049C /* WKWebView + DeleteMenuItems.m */,
+				B931916820A6D1510014049C /* WKWebView + ExternalNavigationDelegates.h */,
+				B931916920A6D1510014049C /* WKWebView + ExternalNavigationDelegates.m */,
+				B931916A20A6D1510014049C /* WKWebView + SafeClearCache.h */,
+				B931916B20A6D1510014049C /* WKWebView + SafeClearCache.m */,
+				B931916C20A6D1510014049C /* WKWebView + SafeCookies.h */,
+				B931916D20A6D1510014049C /* WKWebView + SafeCookies.m */,
+				B931916E20A6D1510014049C /* WKWebView + SafeEvaluateJS.h */,
+				B931916F20A6D1510014049C /* WKWebView + SafeEvaluateJS.m */,
+				B931917020A6D1510014049C /* WKWebView + SafeScrollTo.h */,
+				B931917120A6D1510014049C /* WKWebView + SafeScrollTo.m */,
+				B931917220A6D1510014049C /* WKWebView + SupportProtocol.h */,
+				B931917320A6D1510014049C /* WKWebView + SupportProtocol.m */,
+				B931917420A6D1510014049C /* WKWebView + SyncConfigUA.h */,
+				B931917520A6D1510014049C /* WKWebView + SyncConfigUA.m */,
+				B931917620A6D1510014049C /* WKWebViewExtensionsDef.h */,
+			);
+			path = WKWebViewExtensions;
+			sourceTree = "<group>";
+		};
+		B931917720A6D1510014049C /* ScrollReuseHandler */ = {
+			isa = PBXGroup;
+			children = (
+				B9FC323320A938D30092676D /* HPKComponentViewPool.h */,
+				B9FC323420A938D30092676D /* HPKComponentViewPool.m */,
+				B9FC323B20A9397B0092676D /* HPKComponentHandler.h */,
+				B9FC323C20A9397B0092676D /* HPKComponentHandler.m */,
+				B9FC323F20A939BD0092676D /* HPKDealgateDispatcher.h */,
+				B9FC324020A939BD0092676D /* HPKDealgateDispatcher.m */,
+				B9FC324320A939E30092676D /* HPKComponentContext.h */,
+				B9FC324420A939E30092676D /* HPKComponentContext.m */,
+				B9FC324B20A93A3D0092676D /* HPKModelProtocol.h */,
+				B9FC325320A93B4D0092676D /* UIKit + HPK.h */,
+				B9FC325420A93B4D0092676D /* UIKit + HPK.m */,
+			);
+			path = ScrollReuseHandler;
+			sourceTree = "<group>";
+		};
+		B931918820A6D1510014049C /* HybridViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B931918B20A6D1510014049C /* HPKContainerScrollView.h */,
+				B931918C20A6D1510014049C /* HPKContainerScrollView.m */,
+				B931918D20A6D1510014049C /* HPKWebViewHandler.h */,
+				B931918E20A6D1510014049C /* HPKWebViewHandler.m */,
+				B9FC324F20A93A900092676D /* HPKBaseViewController.h */,
+				B9FC325020A93A900092676D /* HPKBaseViewController.m */,
+				B9FC325920A94A6D0092676D /* HPKAbstractViewController.m */,
+				B931915B20A6D1510014049C /* HPKViewConfig.m */,
+			);
+			path = HybridViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B931914C20A6D12A0014049C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B931919B20A6D1510014049C /* WKWebView + DeleteMenuItems.h in Headers */,
+				B931915420A6D12A0014049C /* HybridPageKit.h in Headers */,
+				B9FC325520A93B4D0092676D /* UIKit + HPK.h in Headers */,
+				B93191BE20A6D1510014049C /* HPKContainerScrollView.h in Headers */,
+				B93191C020A6D1510014049C /* HPKWebViewHandler.h in Headers */,
+				B9FC325120A93A900092676D /* HPKBaseViewController.h in Headers */,
+				B93191A520A6D1510014049C /* WKWebView + SafeScrollTo.h in Headers */,
+				B931919520A6D1510014049C /* HPKURLProtocol.h in Headers */,
+				B9FC324520A939E30092676D /* HPKComponentContext.h in Headers */,
+				B93191A920A6D1510014049C /* WKWebView + SyncConfigUA.h in Headers */,
+				B9FC324D20A93A3D0092676D /* HPKModelProtocol.h in Headers */,
+				B931919720A6D1510014049C /* HPKWebView.h in Headers */,
+				B9FC323D20A9397B0092676D /* HPKComponentHandler.h in Headers */,
+				B93191BB20A6D1510014049C /* HPKDefs.h in Headers */,
+				B931919920A6D1510014049C /* HPKWebViewPool.h in Headers */,
+				B931919D20A6D1510014049C /* WKWebView + ExternalNavigationDelegates.h in Headers */,
+				B93191AB20A6D1510014049C /* WKWebViewExtensionsDef.h in Headers */,
+				B93191A120A6D1510014049C /* WKWebView + SafeCookies.h in Headers */,
+				B9FC324120A939BD0092676D /* HPKDealgateDispatcher.h in Headers */,
+				B93191A320A6D1510014049C /* WKWebView + SafeEvaluateJS.h in Headers */,
+				B9FC323520A938D30092676D /* HPKComponentViewPool.h in Headers */,
+				B931919F20A6D1510014049C /* WKWebView + SafeClearCache.h in Headers */,
+				B9FC325A20A94A6D0092676D /* HPKAbstractViewController.h in Headers */,
+				B93191A720A6D1510014049C /* WKWebView + SupportProtocol.h in Headers */,
+				B931919420A6D1510014049C /* HPKViewConfig.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B931914E20A6D12A0014049C /* HybridPageKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B931915720A6D12A0014049C /* Build configuration list for PBXNativeTarget "HybridPageKit" */;
+			buildPhases = (
+				B931914A20A6D12A0014049C /* Sources */,
+				B931914B20A6D12A0014049C /* Frameworks */,
+				B931914C20A6D12A0014049C /* Headers */,
+				B931914D20A6D12A0014049C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HybridPageKit;
+			productName = HybridPageKit;
+			productReference = B931914F20A6D12A0014049C /* HybridPageKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B931914620A6D12A0014049C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = HybridPageKit;
+				TargetAttributes = {
+					B931914E20A6D12A0014049C = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = B931914920A6D12A0014049C /* Build configuration list for PBXProject "HybridPageKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B931914520A6D12A0014049C;
+			productRefGroup = B931915020A6D12A0014049C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B931914E20A6D12A0014049C /* HybridPageKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B931914D20A6D12A0014049C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B931914A20A6D12A0014049C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B931919620A6D1510014049C /* HPKURLProtocol.m in Sources */,
+				B931919A20A6D1510014049C /* HPKWebViewPool.m in Sources */,
+				B9FC324220A939BD0092676D /* HPKDealgateDispatcher.m in Sources */,
+				B9FC325620A93B4D0092676D /* UIKit + HPK.m in Sources */,
+				B9FC325B20A94A6D0092676D /* HPKAbstractViewController.m in Sources */,
+				B931919E20A6D1510014049C /* WKWebView + ExternalNavigationDelegates.m in Sources */,
+				B931919C20A6D1510014049C /* WKWebView + DeleteMenuItems.m in Sources */,
+				B93191C120A6D1510014049C /* HPKWebViewHandler.m in Sources */,
+				B93191A620A6D1510014049C /* WKWebView + SafeScrollTo.m in Sources */,
+				B93191A220A6D1510014049C /* WKWebView + SafeCookies.m in Sources */,
+				B93191BF20A6D1510014049C /* HPKContainerScrollView.m in Sources */,
+				B93191A420A6D1510014049C /* WKWebView + SafeEvaluateJS.m in Sources */,
+				B931919220A6D1510014049C /* HPKViewConfig.m in Sources */,
+				B93191A820A6D1510014049C /* WKWebView + SupportProtocol.m in Sources */,
+				B931919820A6D1510014049C /* HPKWebView.m in Sources */,
+				B9FC323620A938D30092676D /* HPKComponentViewPool.m in Sources */,
+				B9FC324620A939E30092676D /* HPKComponentContext.m in Sources */,
+				B9FC323E20A9397B0092676D /* HPKComponentHandler.m in Sources */,
+				B93191A020A6D1510014049C /* WKWebView + SafeClearCache.m in Sources */,
+				B93191AA20A6D1510014049C /* WKWebView + SyncConfigUA.m in Sources */,
+				B9FC325220A93A900092676D /* HPKBaseViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B931915520A6D12A0014049C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B931915620A6D12A0014049C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B931915820A6D12A0014049C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HybridPageKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HybridPageKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B931915920A6D12A0014049C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = HybridPageKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.HybridPageKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B931914920A6D12A0014049C /* Build configuration list for PBXProject "HybridPageKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B931915520A6D12A0014049C /* Debug */,
+				B931915620A6D12A0014049C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B931915720A6D12A0014049C /* Build configuration list for PBXNativeTarget "HybridPageKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B931915820A6D12A0014049C /* Debug */,
+				B931915920A6D12A0014049C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B931914620A6D12A0014049C /* Project object */;
+}

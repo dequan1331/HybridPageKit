@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+workspace 'HybridPageKit'
+target 'HybridPageKit-Example' do
+	project 'HybridPageKit-Example/HybridPageKit-Example.xcodeproj'
+	pod 'GRMustache'
+	pod 'MJRefresh'
+end
