@@ -51,7 +51,7 @@
 		B9FC325220A93A900092676D /* HPKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325020A93A900092676D /* HPKBaseViewController.m */; };
 		B9FC325520A93B4D0092676D /* UIKit + HPK.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC325320A93B4D0092676D /* UIKit + HPK.h */; };
 		B9FC325620A93B4D0092676D /* UIKit + HPK.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325420A93B4D0092676D /* UIKit + HPK.m */; };
-		B9FC325A20A94A6D0092676D /* HPKAbstractViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */; };
+		B9FC325A20A94A6D0092676D /* HPKAbstractViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9FC325B20A94A6D0092676D /* HPKAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325920A94A6D0092676D /* HPKAbstractViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -137,10 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				B931915220A6D12A0014049C /* HybridPageKit.h */,
-				B931915D20A6D1510014049C /* HPKViewConfig.h */,
-				B931918720A6D1510014049C /* HPKDefs.h */,
-				B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */,
 				B931915E20A6D1510014049C /* ReusableWebView */,
+				B931916520A6D1510014049C /* WKWebViewExtensions */,
 				B931917720A6D1510014049C /* ScrollReuseHandler */,
 				B931918820A6D1510014049C /* HybridViewController */,
 				B931915320A6D12A0014049C /* Info.plist */,
@@ -151,7 +149,6 @@
 		B931915E20A6D1510014049C /* ReusableWebView */ = {
 			isa = PBXGroup;
 			children = (
-				B931916520A6D1510014049C /* WKWebViewExtensions */,
 				B931915F20A6D1510014049C /* HPKURLProtocol.h */,
 				B931916020A6D1510014049C /* HPKURLProtocol.m */,
 				B931916120A6D1510014049C /* HPKWebView.h */,
@@ -207,13 +204,16 @@
 		B931918820A6D1510014049C /* HybridViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B931918720A6D1510014049C /* HPKDefs.h */,
 				B931918B20A6D1510014049C /* HPKContainerScrollView.h */,
 				B931918C20A6D1510014049C /* HPKContainerScrollView.m */,
 				B931918D20A6D1510014049C /* HPKWebViewHandler.h */,
 				B931918E20A6D1510014049C /* HPKWebViewHandler.m */,
 				B9FC324F20A93A900092676D /* HPKBaseViewController.h */,
 				B9FC325020A93A900092676D /* HPKBaseViewController.m */,
+				B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */,
 				B9FC325920A94A6D0092676D /* HPKAbstractViewController.m */,
+				B931915D20A6D1510014049C /* HPKViewConfig.h */,
 				B931915B20A6D1510014049C /* HPKViewConfig.m */,
 			);
 			path = HybridViewController;

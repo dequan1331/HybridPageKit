@@ -8,16 +8,14 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.requires_arc = true
   s.source       = { :git => "https://github.com/dequan1331/HybridPageKit.git", :tag => "0.1" }
-  s.source_files = "HybridPageKit/HybridPageKit/HybridPageKit/**/*.{h,m}"
-  s.frameworks = "UIKit","WebKit"
+  s.source_files = "HybridPageKit/HybridPageKit/HybridPageKit/ReusableWebView/**/*.{h,m}","HybridPageKit/HybridPageKit/HybridPageKit/HybridViewController/**/*.{h,m}","HybridPageKit/HybridPageKit/HybridPageKit/HybridPageKit.h"
+  s.public_header_files = "HybridPageKit/HybridPageKit/HybridPageKit/HybridPageKit.h","HybridPageKit/HybridPageKit/HybridPageKit/HybridViewController/HPKViewConfig.h","HybridPageKit/HybridPageKit/HybridPageKit/HybridViewController/HPKAbstractViewController.h","HybridPageKit/HybridPageKit/HybridPageKit/HybridViewController/HPKDefs.h"
 
   s.subspec 'WKWebViewExtension' do |ss|
-      ss.source_files = 'HybridPageKit/HybridPageKit/HybridPageKit/ReusableWebView/WKWebViewExtensions/**/*.{h,m}'
-      s.frameworks = "UIKit","WebKit"
+      ss.source_files = 'HybridPageKit/HybridPageKit/HybridPageKit/WKWebViewExtensions/**/*.{h,m}'
   end
 
   s.subspec 'ScrollReuseHandler' do |ss|
       ss.source_files = 'HybridPageKit/HybridPageKit/HybridPageKit/ScrollReuseHandler/**/*.{h,m}'
-      s.frameworks = "UIKit"
   end
 end
