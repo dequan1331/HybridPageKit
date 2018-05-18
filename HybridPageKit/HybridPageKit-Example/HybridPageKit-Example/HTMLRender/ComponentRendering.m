@@ -32,7 +32,9 @@
     }
     
     if (!_template) {
-        _template = [GRMustacheTemplate templateFromString:[HPKWebViewHandler componentHtmlTemplate] error:nil];
+        _template = [GRMustacheTemplate templateFromString:[NSString stringWithFormat:@"\
+                                                            <div class='%@' style='width:{{width}}px;height:{{height}}px' data-index='{{componentIndex}}'>\
+                                                            </div>",HPKWebViewHandlerComponentClass] error:nil];
     }
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width - 16;

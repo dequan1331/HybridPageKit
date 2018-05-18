@@ -8,7 +8,7 @@
 
 #import "HPKWebView.h"
 #import "WKWebViewExtensionsDef.h"
-#import "HPKWebViewHandler.h"
+#import "HPKJavascriptUtils.h"
 
 @implementation HPKWebView
 
@@ -23,12 +23,6 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if(self){
-        [self.configuration.userContentController addUserScript:[[WKUserScript alloc] initWithSource:[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"jquery" ofType:@"js"] encoding:NSUTF8StringEncoding error:nil]
-                                                                                       injectionTime:WKUserScriptInjectionTimeAtDocumentStart
-                                                                                    forMainFrameOnly:YES]];
-        [self.configuration.userContentController addUserScript:[[WKUserScript alloc] initWithSource:[HPKWebViewHandler getComponentFrameJs]
-                                                                                       injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
-                                                                                    forMainFrameOnly:YES]];
     }
     return self;
 }
@@ -56,6 +50,7 @@
 }
 -(void)webViewEndReuse{
     
+    [self.configuration.userContentController removeAllUserScripts];
     _holderObject = nil;
     self.scrollView.delegate = nil;
     [self stopLoading];
@@ -135,6 +130,21 @@
 }
 - (void)deleteAllCustomCookies{
     [super deleteAllCustomCookies];
+}
+
+- (void)addDocumentStartScriptArray:(NSArray <NSString *> *)documentStartScriptArray
+             documentEndScriptArray:(NSArray <NSString *> *)documentEndScriptArray{
+    
+    for(NSString *script in documentStartScriptArray){
+        [self.configuration.userContentController addUserScript:[[WKUserScript alloc] initWithSource:script
+                                                                                       injectionTime:WKUserScriptInjectionTimeAtDocumentStart
+                                                                                    forMainFrameOnly:YES]];
+    }
+    for(NSString *script in documentStartScriptArray){
+        [self.configuration.userContentController addUserScript:[[WKUserScript alloc] initWithSource:script
+                                                                                       injectionTime:WKUserScriptInjectionTimeAtDocumentEnd
+                                                                                    forMainFrameOnly:YES]];
+    }
 }
 
 @end

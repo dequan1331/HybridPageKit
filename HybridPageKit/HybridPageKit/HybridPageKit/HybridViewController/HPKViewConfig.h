@@ -34,4 +34,20 @@
  */
 @property(nonatomic,assign,readwrite) CGFloat scrollWorkRange;
 
+/**
+ *  webView Component PlaceHolder Dom Class string
+ */
+@property(nonatomic,copy,readwrite)NSString *webViewComponentPlaceHolderDomClass;
+
+/**
+ *  webview add custom script
+ */
+@property(nonatomic,copy,readwrite)NSArray<NSString *> *documentStartScriptArray;
+@property(nonatomic,copy,readwrite)NSArray<NSString *> *documentEndScriptArray;
+
+/**
+ *  whether the controller include webview
+ */
+@property(nonatomic,assign,readwrite)BOOL needWebView;
+
 @end

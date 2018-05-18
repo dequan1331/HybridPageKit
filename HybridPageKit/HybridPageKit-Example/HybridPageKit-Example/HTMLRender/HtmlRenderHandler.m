@@ -7,7 +7,6 @@
 //
 
 #import "HtmlRenderHandler.h"
-#import "ComponentRendering.h"
 
 @interface HtmlRenderHandler ()<GRMustacheTagDelegate>
 @property(nonatomic, strong, readwrite) dispatch_queue_t serialQueue;

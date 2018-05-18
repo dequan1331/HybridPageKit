@@ -47,12 +47,14 @@
 		B9FC324520A939E30092676D /* HPKComponentContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC324320A939E30092676D /* HPKComponentContext.h */; };
 		B9FC324620A939E30092676D /* HPKComponentContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC324420A939E30092676D /* HPKComponentContext.m */; };
 		B9FC324D20A93A3D0092676D /* HPKModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC324B20A93A3D0092676D /* HPKModelProtocol.h */; };
-		B9FC325120A93A900092676D /* HPKBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC324F20A93A900092676D /* HPKBaseViewController.h */; };
+		B9FC325120A93A900092676D /* HPKBaseViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC324F20A93A900092676D /* HPKBaseViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9FC325220A93A900092676D /* HPKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325020A93A900092676D /* HPKBaseViewController.m */; };
 		B9FC325520A93B4D0092676D /* UIKit + HPK.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC325320A93B4D0092676D /* UIKit + HPK.h */; };
 		B9FC325620A93B4D0092676D /* UIKit + HPK.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325420A93B4D0092676D /* UIKit + HPK.m */; };
 		B9FC325A20A94A6D0092676D /* HPKAbstractViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9FC325B20A94A6D0092676D /* HPKAbstractViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC325920A94A6D0092676D /* HPKAbstractViewController.m */; };
+		B9FC329E20AEC0A40092676D /* HPKJavascriptUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FC329C20AEC0A40092676D /* HPKJavascriptUtils.h */; };
+		B9FC329F20AEC0A40092676D /* HPKJavascriptUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B9FC329D20AEC0A40092676D /* HPKJavascriptUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,8 @@
 		B9FC325420A93B4D0092676D /* UIKit + HPK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIKit + HPK.m"; sourceTree = "<group>"; };
 		B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKAbstractViewController.h; sourceTree = "<group>"; };
 		B9FC325920A94A6D0092676D /* HPKAbstractViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKAbstractViewController.m; sourceTree = "<group>"; };
+		B9FC329C20AEC0A40092676D /* HPKJavascriptUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPKJavascriptUtils.h; sourceTree = "<group>"; };
+		B9FC329D20AEC0A40092676D /* HPKJavascriptUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPKJavascriptUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,10 @@
 				B931916220A6D1510014049C /* HPKWebView.m */,
 				B931916320A6D1510014049C /* HPKWebViewPool.h */,
 				B931916420A6D1510014049C /* HPKWebViewPool.m */,
+				B931918D20A6D1510014049C /* HPKWebViewHandler.h */,
+				B931918E20A6D1510014049C /* HPKWebViewHandler.m */,
+				B9FC329C20AEC0A40092676D /* HPKJavascriptUtils.h */,
+				B9FC329D20AEC0A40092676D /* HPKJavascriptUtils.m */,
 			);
 			path = ReusableWebView;
 			sourceTree = "<group>";
@@ -204,11 +212,9 @@
 		B931918820A6D1510014049C /* HybridViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B931918720A6D1510014049C /* HPKDefs.h */,
 				B931918B20A6D1510014049C /* HPKContainerScrollView.h */,
 				B931918C20A6D1510014049C /* HPKContainerScrollView.m */,
-				B931918D20A6D1510014049C /* HPKWebViewHandler.h */,
-				B931918E20A6D1510014049C /* HPKWebViewHandler.m */,
+				B931918720A6D1510014049C /* HPKDefs.h */,
 				B9FC324F20A93A900092676D /* HPKBaseViewController.h */,
 				B9FC325020A93A900092676D /* HPKBaseViewController.m */,
 				B9FC325820A94A6D0092676D /* HPKAbstractViewController.h */,
@@ -228,10 +234,11 @@
 			files = (
 				B931919B20A6D1510014049C /* WKWebView + DeleteMenuItems.h in Headers */,
 				B931915420A6D12A0014049C /* HybridPageKit.h in Headers */,
+				B9FC325120A93A900092676D /* HPKBaseViewController.h in Headers */,
 				B9FC325520A93B4D0092676D /* UIKit + HPK.h in Headers */,
 				B93191BE20A6D1510014049C /* HPKContainerScrollView.h in Headers */,
+				B9FC329E20AEC0A40092676D /* HPKJavascriptUtils.h in Headers */,
 				B93191C020A6D1510014049C /* HPKWebViewHandler.h in Headers */,
-				B9FC325120A93A900092676D /* HPKBaseViewController.h in Headers */,
 				B93191A520A6D1510014049C /* WKWebView + SafeScrollTo.h in Headers */,
 				B931919520A6D1510014049C /* HPKURLProtocol.h in Headers */,
 				B9FC324520A939E30092676D /* HPKComponentContext.h in Headers */,
@@ -339,6 +346,7 @@
 				B9FC323620A938D30092676D /* HPKComponentViewPool.m in Sources */,
 				B9FC324620A939E30092676D /* HPKComponentContext.m in Sources */,
 				B9FC323E20A9397B0092676D /* HPKComponentHandler.m in Sources */,
+				B9FC329F20AEC0A40092676D /* HPKJavascriptUtils.m in Sources */,
 				B93191A020A6D1510014049C /* WKWebView + SafeClearCache.m in Sources */,
 				B93191AA20A6D1510014049C /* WKWebView + SyncConfigUA.m in Sources */,
 				B9FC325220A93A900092676D /* HPKBaseViewController.m in Sources */,
@@ -474,6 +482,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = HybridPageKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -482,6 +491,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HybridPageKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -500,6 +510,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = HybridPageKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -508,6 +519,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.HybridPageKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

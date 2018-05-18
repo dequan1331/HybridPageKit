@@ -17,7 +17,9 @@
 
 @implementation FoldedViewController
 -(instancetype)init{
-    self = [super initWithType:kHPKViewControllerTypeNative];
+    self = [super initWithConfigBuilder:^(HPKViewConfig *defaultConfig) {
+        defaultConfig.needWebView = NO;
+    }];
     if (self) {
     }
     return self;

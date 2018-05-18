@@ -16,11 +16,4 @@
 - (instancetype)initWithController:(__kindof HPKAbstractViewController *)controller
                       webViewFrame:(CGRect)webViewFrame;
 
-//js string
-+ (NSString *)getWebViewContentHeightWithContainerWidth:(int)width;
-+ (NSString *)getComponentFrameJs;
-+ (NSString *)componentHtmlTemplate;
-+ (NSString *)setComponentJSWithIndex:(NSString *)index
-                        componentSize:(CGSize)componentSize;
-
 @end

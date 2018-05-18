@@ -10,22 +10,16 @@
 #import "HPKBaseViewController.h"
 #import "HPKViewConfig.h"
 
-typedef NS_ENUM(NSInteger,HPKViewControllerType){
-    kHPKViewControllerTypeHybrid,       // webView area + native Extension area
-    kHPKViewControllerTypeNative,       // only native Extension area
-};
-
+typedef void (^HPKViewConfigBuilderBlock)(HPKViewConfig * defaultConfig);
 /**
  *
  */
 @interface HPKAbstractViewController : HPKBaseViewController
 
 
-@property(nonatomic,strong,readwrite) HPKViewConfig *viewConfig;
+@property(nonatomic,strong,readonly) HPKViewConfig *viewConfig;
 
-
-- (instancetype)initWithType:(HPKViewControllerType)type;
-
+- (instancetype)initWithConfigBuilder:(HPKViewConfigBuilderBlock)viewConfigBuilder;
 
 #pragma mark -
 

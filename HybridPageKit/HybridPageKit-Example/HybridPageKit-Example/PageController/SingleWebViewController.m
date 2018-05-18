@@ -19,7 +19,10 @@
 @implementation SingleWebViewController
 
 - (instancetype)init{
-    self = [super initWithType:kHPKViewControllerTypeHybrid];
+    self = [super initWithConfigBuilder:^(HPKViewConfig *defaultConfig) {
+        defaultConfig.needWebView = YES;
+        defaultConfig.webViewComponentPlaceHolderDomClass = HPKWebViewHandlerComponentClass;
+    }];
     if (self) {
         [self _getRemoteData];
     }

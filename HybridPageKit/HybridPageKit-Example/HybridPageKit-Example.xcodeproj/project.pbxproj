@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3628FD8BB91310D21187B1D9 /* libPods-HybridPageKit-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD42E14958222F686F20EAD /* libPods-HybridPageKit-Example.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		0F21C29FB17425A3DC9C3769 /* libPods-HybridPageKit-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDEB65748A0C4CE2FD33E0B2 /* libPods-HybridPageKit-Example.a */; };
 		B931904D20A6BACA0014049C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B931904C20A6BACA0014049C /* AppDelegate.m */; };
 		B931905520A6BACB0014049C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B931905420A6BACB0014049C /* Assets.xcassets */; };
 		B931905B20A6BACB0014049C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B931905A20A6BACB0014049C /* main.m */; };
@@ -50,32 +50,15 @@
 		B93190E520A6BB360014049C /* gif2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B93190B420A6BB360014049C /* gif2.jpeg */; };
 		B93190E620A6BB360014049C /* hotCommentContent.txt in Resources */ = {isa = PBXBuildFile; fileRef = B93190B520A6BB360014049C /* hotCommentContent.txt */; };
 		B93190E720A6BB360014049C /* iconImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B93190B620A6BB360014049C /* iconImage.png */; };
-		B93190E820A6BB360014049C /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = B93190B720A6BB360014049C /* jquery.js */; };
 		B93190E920A6BB360014049C /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = B93190B820A6BB360014049C /* play.png */; };
 		B93190EA20A6BB360014049C /* shortArticleContent.txt in Resources */ = {isa = PBXBuildFile; fileRef = B93190B920A6BB360014049C /* shortArticleContent.txt */; };
 		B93190EC20A6BB360014049C /* ComponentRendering.m in Sources */ = {isa = PBXBuildFile; fileRef = B93190BE20A6BB360014049C /* ComponentRendering.m */; };
 		B93190ED20A6BB360014049C /* HtmlRenderHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B93190C020A6BB360014049C /* HtmlRenderHandler.m */; };
 		B931912F20A6C5D10014049C /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B931912E20A6C5D10014049C /* ListViewController.m */; };
-		B9FC326020A998060092676D /* HybridPageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FC325F20A998060092676D /* HybridPageKit.framework */; };
-		B9FC326120A998060092676D /* HybridPageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B9FC325F20A998060092676D /* HybridPageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B9FC329B20AEBB790092676D /* HybridPageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9FC329A20AEBB790092676D /* HybridPageKit.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		B9FC326220A998060092676D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B9FC326120A998060092676D /* HybridPageKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		4BD42E14958222F686F20EAD /* libPods-HybridPageKit-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HybridPageKit-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61585C04C2E71E40B56A4580 /* Pods-HybridPageKit-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridPageKit-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HybridPageKit-Example/Pods-HybridPageKit-Example.release.xcconfig"; sourceTree = "<group>"; };
 		B931904820A6BACA0014049C /* HybridPageKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HybridPageKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B931904B20A6BACA0014049C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,7 +139,6 @@
 		B93190B420A6BB360014049C /* gif2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gif2.jpeg; sourceTree = "<group>"; };
 		B93190B520A6BB360014049C /* hotCommentContent.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hotCommentContent.txt; sourceTree = "<group>"; };
 		B93190B620A6BB360014049C /* iconImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconImage.png; sourceTree = "<group>"; };
-		B93190B720A6BB360014049C /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		B93190B820A6BB360014049C /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		B93190B920A6BB360014049C /* shortArticleContent.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shortArticleContent.txt; sourceTree = "<group>"; };
 		B93190BD20A6BB360014049C /* ComponentRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentRendering.h; sourceTree = "<group>"; };
@@ -165,10 +147,10 @@
 		B93190C020A6BB360014049C /* HtmlRenderHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlRenderHandler.m; sourceTree = "<group>"; };
 		B931912D20A6C5D10014049C /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		B931912E20A6C5D10014049C /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
-		B95F3E2F20A6D25A004A1782 /* HybridPageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HybridPageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9FC325720A947E20092676D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		B9FC325F20A998060092676D /* HybridPageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HybridPageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9FC329A20AEBB790092676D /* HybridPageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HybridPageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB54F1B4A48EAA5762F50DAC /* Pods-HybridPageKit-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HybridPageKit-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HybridPageKit-Example/Pods-HybridPageKit-Example.debug.xcconfig"; sourceTree = "<group>"; };
+		FDEB65748A0C4CE2FD33E0B2 /* libPods-HybridPageKit-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HybridPageKit-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,8 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9FC326020A998060092676D /* HybridPageKit.framework in Frameworks */,
-				3628FD8BB91310D21187B1D9 /* libPods-HybridPageKit-Example.a in Frameworks */,
+				B9FC329B20AEBB790092676D /* HybridPageKit.framework in Frameworks */,
+				0F21C29FB17425A3DC9C3769 /* libPods-HybridPageKit-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,8 +178,8 @@
 		907424C85AD43D2300FE5A0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B95F3E2F20A6D25A004A1782 /* HybridPageKit.framework */,
-				4BD42E14958222F686F20EAD /* libPods-HybridPageKit-Example.a */,
+				B9FC329A20AEBB790092676D /* HybridPageKit.framework */,
+				FDEB65748A0C4CE2FD33E0B2 /* libPods-HybridPageKit-Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,7 +187,6 @@
 		B931903F20A6BACA0014049C = {
 			isa = PBXGroup;
 			children = (
-				B9FC325F20A998060092676D /* HybridPageKit.framework */,
 				B931904A20A6BACA0014049C /* HybridPageKit-Example */,
 				B931904920A6BACA0014049C /* Products */,
 				3673A692DA38623D6A74377D /* Pods */,
@@ -406,13 +387,12 @@
 			children = (
 				B93190B120A6BB360014049C /* adContent.txt */,
 				B93190B220A6BB360014049C /* articleContent.txt */,
+				B93190B520A6BB360014049C /* hotCommentContent.txt */,
+				B93190B920A6BB360014049C /* shortArticleContent.txt */,
 				B93190B320A6BB360014049C /* gif1.jpeg */,
 				B93190B420A6BB360014049C /* gif2.jpeg */,
-				B93190B520A6BB360014049C /* hotCommentContent.txt */,
 				B93190B620A6BB360014049C /* iconImage.png */,
-				B93190B720A6BB360014049C /* jquery.js */,
 				B93190B820A6BB360014049C /* play.png */,
-				B93190B920A6BB360014049C /* shortArticleContent.txt */,
 			);
 			path = FakeServerData;
 			sourceTree = "<group>";
@@ -440,7 +420,6 @@
 				B931904520A6BACA0014049C /* Frameworks */,
 				B931904620A6BACA0014049C /* Resources */,
 				621BA495AF79340C5AAEAED8 /* [CP] Copy Pods Resources */,
-				B9FC326220A998060092676D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -488,7 +467,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B93190E820A6BB360014049C /* jquery.js in Resources */,
 				B93190E520A6BB360014049C /* gif2.jpeg in Resources */,
 				B93190E720A6BB360014049C /* iconImage.png in Resources */,
 				B93190EA20A6BB360014049C /* shortArticleContent.txt in Resources */,

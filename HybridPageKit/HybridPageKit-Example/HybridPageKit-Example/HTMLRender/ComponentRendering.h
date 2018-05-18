@@ -8,6 +8,8 @@
 
 #import "GRMustache.h"
 
+#define HPKWebViewHandlerComponentClass @"HPK-Component-PlaceHolder"
+
 @interface ComponentRendering : NSObject<GRMustacheRendering>
 - (void)setComponentIndex:(NSString *)index;
 - (NSString *)renderForMustacheTag:(GRMustacheTag *)tag

@@ -18,8 +18,8 @@ FOUNDATION_EXPORT const unsigned char HybridPageKitVersionString[];
 #ifndef _HybridPageKit_
 #define _HybridPageKit_
 
-#import <HybridPageKit/HybridViewController/HPKDefs.h>
-#import <HybridPageKit/HybridViewController/HPKAbstractViewController.h>
-#import <HybridPageKit/HybridViewController/HPKViewConfig.h>
+#import "HPKDefs.h"
+#import "HPKAbstractViewController.h"
+#import "HPKViewConfig.h"
 
 #endif /* _HybridPageKit_ */

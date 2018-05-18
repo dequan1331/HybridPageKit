@@ -5,6 +5,7 @@
 //  Created by dequanzhu.
 //  Copyright © 2018 HybridPageKit. All rights reserved.
 //
+#import "ComponentRendering.h"
 
 typedef void (^HPKHtmlRenderCompleteBlock)(NSString *finalHTMLString, NSError *error);
 

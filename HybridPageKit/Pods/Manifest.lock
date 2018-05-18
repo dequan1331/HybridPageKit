@@ -9,7 +9,7 @@ DEPENDENCIES:
   - MJRefresh
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - GRMustache
     - JRSwizzle
     - MJRefresh
@@ -21,4 +21,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 52730df93a172996da84ca29cbb53aa823541393
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

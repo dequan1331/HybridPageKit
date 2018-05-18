@@ -10,6 +10,7 @@
 #import "HPKWebViewHandler.h"
 #import "HPKContainerScrollView.h"
 #import "HPKComponentHandler.h"
+#import "HPKJavascriptUtils.h"
 #import "UIKit + HPK.h"
 
 @interface HPKAbstractViewController()<WKNavigationDelegate,UIScrollViewDelegate>
@@ -26,19 +27,25 @@
 @property(nonatomic,assign,readwrite)CGFloat topInsetOffset;
 @property(nonatomic,assign,readwrite)CGFloat bottomViewOriginY;
 @property(nonatomic,assign,readwrite)CGFloat componentsOffsetY;
+
+@property(nonatomic,strong,readwrite) HPKViewConfig *viewConfig;
 @end
 
 @implementation HPKAbstractViewController
 
-- (instancetype)initWithType:(HPKViewControllerType)type{
+- (instancetype)initWithConfigBuilder:(HPKViewConfigBuilderBlock)viewConfigBuilder{
     self = [super init];
     if (self) {
         self.componentControllerArray = [self getValidComponentControllers];
-        _needWebView = (type == kHPKViewControllerTypeHybrid) ? YES : NO;
+        _viewConfig = [[HPKViewConfig alloc] init];
+        if(viewConfigBuilder){
+            viewConfigBuilder(_viewConfig);
+        }
+        _needWebView = (_viewConfig.needWebView) ? YES : NO;
         _topInsetOffset = 0.f;
         _bottomViewOriginY = 0.f;
         _componentsOffsetY = 0.f;
-        _viewConfig = [[HPKViewConfig alloc] init];
+        
         [self triggerEvent:kHPKComponentEventControllerInit para1:self];
     }
     return self;
@@ -76,7 +83,7 @@
         }];
         
         // container scrollview上组件滚动复用处理
-        _containerViewScrollViewhandler = [[HPKComponentHandler alloc]initWithScrollView:_containerScrollView externalScrollViewDelegate:self scrollWorkRange:self.viewConfig.scrollWorkRange componentViewStateChangeBlock: ^(HPKComponentViewState state, HPKModel *componentItem, __kindof UIView *componentView) {
+        _containerViewScrollViewhandler = [[HPKComponentHandler alloc]initWithScrollView:_containerScrollView externalScrollViewDelegate:self scrollWorkRange:0.f componentViewStateChangeBlock: ^(HPKComponentViewState state, HPKModel *componentItem, __kindof UIView *componentView) {
             __strong __typeof(wself) strongSelf = wself;
             [strongSelf _triggerComponentEventWithState:state componentItem:componentItem componentView:componentView];
         }];
@@ -134,7 +141,8 @@
         return;
     }
     __weak typeof(self) wself = self;
-    [_webViewHandler.webView safeAsyncEvaluateJavaScriptString:[HPKWebViewHandler setComponentJSWithIndex:index componentSize:componentSize] completionBlock:^(NSObject *result) {
+    [_webViewHandler.webView safeAsyncEvaluateJavaScriptString:[HPKJavascriptUtils setComponentJSWithWithDomClass:self.viewConfig.webViewComponentPlaceHolderDomClass index:index componentSize:componentSize]
+                                               completionBlock:^(NSObject *result) {
         __strong __typeof(wself) strongSelf = wself;
         [strongSelf reLayoutWebViewComponents];
     }];
@@ -146,7 +154,7 @@
 }
 - (void)reLayoutWebViewComponents{
     __weak typeof(self) wself = self;
-    [_webViewHandler.webView safeAsyncEvaluateJavaScriptString:@"HPKGetAllComponentFrame()" completionBlock:^(NSObject *result) {
+    [_webViewHandler.webView safeAsyncEvaluateJavaScriptString:[HPKJavascriptUtils getComponentFrameJsWithDomClass:self.viewConfig.webViewComponentPlaceHolderDomClass] completionBlock:^(NSObject *result) {
         __strong __typeof(wself) strongSelf = wself;
         if (![result isKindOfClass:[NSArray class]]) {
             return;
@@ -277,7 +285,7 @@
     }];
     
     //计算WebView ContentSize后，布局Extension Area，防止高度小于一屏
-    [_webViewHandler.webView evaluateJavaScript:[HPKWebViewHandler getWebViewContentHeightWithContainerWidth:(int)self.containerScrollView.bounds.size.width] completionHandler:^(id data, NSError * _Nullable error) {
+    [_webViewHandler.webView evaluateJavaScript:[HPKJavascriptUtils getWebViewContentHeightWithContainerWidth:(int)self.containerScrollView.bounds.size.width] completionHandler:^(id data, NSError * _Nullable error) {
         __strong __typeof(wself) strongSelf = wself;
         CGFloat height = [data floatValue];
         strongSelf.webViewHandler.webView.frame = CGRectMake(0, 0, strongSelf.containerScrollView.bounds.size.width, MIN(height, strongSelf.containerScrollView.bounds.size.height));

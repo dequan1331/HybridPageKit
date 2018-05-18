@@ -49,4 +49,9 @@
 - (NSSet<NSString *> *)getAllCustomCookiesName;
 - (void)deleteAllCustomCookies;
 
+//add script
+- (void)addDocumentStartScriptArray:(NSArray <NSString *> *)documentStartScriptArray
+             documentEndScriptArray:(NSArray <NSString *> *)documentEndScriptArray;
+
+
 @end
