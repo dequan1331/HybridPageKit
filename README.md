@@ -154,9 +154,3 @@ RNSProtocolImp(_index,_frame, ImageView, ImageController, nil);
 ## Licenses
 
 All source code is licensed under the [MIT License](https://github.com/dequan1331/HybridPageKit/blob/master/LICENSE).
-
-## Contact
-
-<img src="https://raw.githubusercontent.com/dequan1331/HybridPageKit/master/README-IMAGE/contact.png">
-
-
