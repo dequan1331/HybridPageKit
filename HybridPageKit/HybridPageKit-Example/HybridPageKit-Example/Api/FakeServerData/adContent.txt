@@ -1,7 +1,0 @@
-{
-    "ret": "0",
-    "id": "123456789", 
-    "title" : "HybridPageKit ",
-    "subTitle" : "Async Data And Reload",
-    "image" : "",
-}

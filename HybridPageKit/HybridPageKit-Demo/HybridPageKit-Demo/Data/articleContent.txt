@@ -1,0 +1,97 @@
+{
+    "ret": "0",
+    "articleContent": "<!DOCTYPE html><html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"><meta name=\"viewport\" content=\"initial-scale=1.0, width=device-width, user-scalable=no,viewport-fit=cover\"/><meta name=\"format-detection\" content=\"telephone=no\"/><title>HybridPageKit</title></head><body id=\"body\"><P>正文内容开始<br/><br/>替换Web中图片为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"IMG_0\"></div></P><P><br/>替换Web中视频为ImageView展示 </P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"VIDEO_0\"></div></P><P><br/>替换Web中图片为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"IMG_1\"></div></P><P><br/>替换Web中图片为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"IMG_2\"></div></P><P><br/>替换Web中Gif为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"GIF_0\"></div></P><P><br/>替换Web中图片为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"IMG_3\"></div></P><P><br/>替换Web中Gif为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"GIF_1\"></div></P><P><br/>替换Web中Gif为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"GIF_2\"></div></P><P><br/>替换Web中图片为ImageView展示  \n</P><P><div class=\"web-component\" style=\"width:100%;height:276px;\" component-index=\"IMG_4\"></div></P><P><br/>正文结束<br/></P></body></html>",
+    "components": {
+        "IMG_0": {
+            "desc": "HybridPageKit-TestImage-0",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "IMG_1": {
+            "desc": "HybridPageKit-TestImage-1",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "IMG_2": {
+            "desc": "HybridPageKit-TestImage-2",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "IMG_3": {
+            "desc": "HybridPageKit-TestImage-3",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "IMG_4": {
+            "desc": "HybridPageKit-TestImage-4",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "GIF_0": {
+            "desc": "HybridPageKit-TestImage-0",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "GIF_1": {
+            "desc": "HybridPageKit-TestImage-1",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "GIF_2": {
+            "desc": "HybridPageKit-TestImage-2",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+        "VIDEO_0": {
+            "desc": "HybridPageKit-VIDEO-0",
+            "url": "http://127.0.0.1:8080?type=3",
+            "width": "340",
+            "height": "200"
+        },
+    },
+    "articleTitle": {
+        "title" : "文章标题",
+    },
+    "articleAd":{
+        "ret": "0",
+        "id": "123456789",
+        "title" : "HybridPageKit",
+        "subTitle" : "一个异步拉取数据、动态更新的组件",
+        "image" : "",
+    },
+    "articleMedia": {
+        "mediaName" : "HybridPageKit",
+        "mediaDescribe": "普通业务组件",
+        "mediaIcon": "",
+    },
+    "articleRelateNews": {
+        "newsArray" : [
+            "相关文章 - 普通TableViewCell - 1",
+            "相关文章 - 普通TableViewCell - 2",
+            "相关文章 - 普通TableViewCell - 3",
+            "相关文章 - 普通TableViewCell - 4",
+        ],
+    },
+    "articleHotComment": {
+        "commentArray" : [
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+            "底部评论 - 支持上拉加载 - ",
+        ],
+    },
+}
