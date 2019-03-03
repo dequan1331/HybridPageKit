@@ -4,7 +4,7 @@
 
 >**HybridPageKit** is a easy integration framework for Content pages of News App
 >
->Base on [ReusableNestingScrollview](https://github.com/dequan1331/ReusableNestingScrollview)、[WKWebViewExtension](https://github.com/dequan1331/WKWebViewExtension)、and the details metioned in [Extended Reading](https://dequan1331.github.io/index-en.html).
+>Base on the details metioned in [Extended Reading](https://dequan1331.github.io/index-en.html).
 
 <br>
 <div>
@@ -17,42 +17,42 @@
 
 ## Install
 
-1.	CocoaPods
-		
-		-> HybridPageKit (0.1)
-		   A high-performance、high-extensibility、easy integration framework for Hybrid content page. Support most content page types of News App.
-		   pod 'HybridPageKit', '~> 0.1'
-		   - Homepage: https://github.com/dequan1331/HybridPageKit
-		   - Source:   https://github.com/dequan1331/HybridPageKit.git
-		   - Versions: 0.1 [master repo]
-		   - Subspecs:
-		     - HybridPageKit/WKWebViewExtension (0.1)
-		     - HybridPageKit/ScrollReuseHandler (0.1)
-		    
-2. Cloning the repository
+1.	CocoaPods 
+```objc
+//In your Podfile
+pod "HybridPageKit", :testspecs => ["HybridPageKitTests"]
+...
+```
+
+2. Carthage
+
+```objc
+//In your Cartfile
+git "https://github.com/dequan1331/HybridPageKit.git" "master"
+```
+
+3. Cloning the repository
 
 
 ##	Features
 
 >	Strongly Recommended to read [iOS News App Content Page Technology Overview](https://dequan1331.github.io/index-en.html)
 
-*	Easy integration，dozens of lines of code can be completed hybrid content page of News App.
+*	Protocol oriented，dozens of lines of code can be completed hybrid content page of News App.
 *	High-extensibility, component-based and POP content page architecture.
 *	Use and Extend WKWebView, stable、few bugs、 support more features.
 *	Reuse of WKWebView, reuse of component Views.
 * 	Convert all non-Text components of WebView into Native. 
 *  	High-performance and thread safety.
 
-##	Sub repo
+##	Related Links
 
-*	[WKWebViewExtension](https://github.com/dequan1331/WKWebViewExtension) : An extension for WKWebView. Providing menuItems delete 、support protocol 、clear cache of iOS8 and so on.
-* 	[ReusableNestingScrollview](https://github.com/dequan1331/ReusableNestingScrollview) : An scrollView handler for UIScrollView & WKWebView and other scrollViews. Providing scrollview`s subViews reusable.
 *	[iOS News App Content Page Technology Overview](https://dequan1331.github.io/index-en.html)
 
 #	Usage
 
 
-1.Base on data-template separation data.
+1. Base on data-template separation data.
 					
 ```json
 {
@@ -102,53 +102,69 @@
 }
 ```
 
-2.create Model & View & Controller of component
+2. create Model & View
 
 ```objc
-//component model implement RNSModelProtocol 
-@interface ImageModel :  NSObject<RNSModelProtocol>
-@end
-@implementation ImageModel
-RNSProtocolImp(_index,_frame, ImageView, ImageController, nil);
-@end
+//Model 
+@interface VideoModel : NSObject<HPKModelProtocol>
+...
+IMP_HPKModelProtocol(@"");
 
-//component view
-@interface ImageView : UIImageView
-@end
+//View 
+@interface VideoView : UIImageView<HPKViewProtocol>
+...
+IMP_HPKViewProtocol()
 
-//component controller implement HPKComponentControllerDelegate
-@interface ImageController : NSObject<HPKComponentControllerDelegate>
-@end
-@implementation ImageController
-	//optional implement method of delegate
-@end
 ```
 
-3.conteng page inherit HPKViewController、simple config and registe component controller
-```objc
-@interface HybridViewController : HPKViewController
-@end
+3. create component Controller
 
-@implementation HybridViewController
-//return component controller
-- (NSArray<NSObject<HPKComponentControllerDelegate> *> *)getValidComponentControllers{
-    return @[
-             [[ImageController alloc]init],
-             ];
+```objc
+@interface VideoController : NSObject<HPKControllerProtocol>
+...
+- (nullable NSArray<Class> *)supportComponentModelClass {
+	return @[[VideoModel class]];
 }
-@end
+...
+- (nullable Class)reusableComponentViewClassWithModel:(HPKModel *)componentModel {
+	return [VideoView class];
+}
+...
+- (void)scrollViewWillDisplayComponentView:(HPKView *)componentView
+                    componentModel:(HPKModel *)componentModel {
+...
+}
+
+- (void)controllerViewDidDisappear {
+...
+}
 ```
 
-5.render page
+4. implement simple content page
 
 ```objc
+...
+_componentHandler = [[HPKPageHandler alloc] initWithViewController:self componentsControllers:@[VideoController ...];
+...
+[_componentHandler handleSingleScrollView:[[UIScrollView alloc] initWithFrame:self.view.bounds]];
+...
+[_componentHandler layoutWithComponentModels:@[VideoModel ...]];
+...
+```
 
-- (void)setArticleDetailModel:(NSObject *)model                              //data
-                 htmlTemplate:(NSString *)htmlTemplate                       //html template
-      webviewExternalDelegate:(id<WKNavigationDelegate>)externalDelegate     //WebView external delegate，maybe self
-            webViewComponents:(NSArray<NSObject<RNSModelProtocol> *> *)webViewComponents        //component models in webView
-          extensionComponents:(NSArray<NSObject<RNSModelProtocol> *> *)extensionComponents;     //component models in native extension area
+5. implement hybrid content page
 
+```objc
+// in page viewController
+...
+_componentHandler = [[HPKPageHandler alloc] initWithViewController:self componentsControllers:@[VideoController ...];
+...
+[_componentHandler handleHybridPageWithContainerScrollView:[[UIScrollView alloc] initWithFrame:self.view.bounds] defaultWebViewClass:[HPKWebViewSubClass class] defaultWebViewIndex:1 webComponentDomClass:@"domClass" webComponentIndexKey:@"domAttrIndex"];
+...
+[_componentHandler layoutWithWebComponentModels:@[WebVideoModel ...]];
+...
+[_componentHandler layoutWithComponentModels:@[VideoModel ...];
+...
 ```
 
 ## Licenses
