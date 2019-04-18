@@ -118,7 +118,7 @@ IMP_HPKViewProtocol()
     return self.scrollView.contentSize.height;
 }
 
-- (UIScrollView *)contentScrollView {
+- (UIScrollView *)componentInnerScrollView {
     return self.scrollView;
 }
 
