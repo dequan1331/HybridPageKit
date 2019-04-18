@@ -262,7 +262,6 @@ typedef void (^HPKRetryUtilsFailedBlock)(NSInteger currentTimes);
 @property (nonatomic, copy, readwrite) HPKWebViewMainNavDelegateContentSizeChangeBlock contentSizeChangeBlock;
 
 @property (nonatomic, assign, readwrite) CGFloat lastReadPositionY;
-@property (nonatomic, assign, readwrite) BOOL hasShowWebView;
 @property (nonatomic, assign, readwrite) BOOL hasAddObserver;
 @end
 
@@ -319,8 +318,6 @@ typedef void (^HPKRetryUtilsFailedBlock)(NSInteger currentTimes);
 #pragma mark - WKNavigationDelegate
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-    
-    _hasShowWebView = NO;
     
     if ([self.originalDelegate respondsToSelector:@selector(webViewDecidePolicyForNavigationResponse:decisionHandler:)]) {
         [self.originalDelegate webViewDecidePolicyForNavigationResponse:navigationResponse decisionHandler:decisionHandler];
@@ -383,7 +380,7 @@ typedef void (^HPKRetryUtilsFailedBlock)(NSInteger currentTimes);
         __weak typeof(self) _self = self;
         [self.webView.scrollView safeAddObserver:self keyPath:HPKWebViewContentSize callback:^(NSObject *oldValue, NSObject *newValue) {
             __strong typeof(_self) self = _self;
-            if (self.contentSizeChangeBlock && self.hasShowWebView) {
+            if (self.contentSizeChangeBlock) {
                 self.contentSizeChangeBlock((NSValue *)newValue,(NSValue *)oldValue);
             }
             [self triggerWebViewEvent:HPKWebViewEventContentSizeChange para1:(NSValue *)newValue para2:(NSValue *)oldValue];
@@ -449,7 +446,6 @@ typedef void (^HPKRetryUtilsFailedBlock)(NSInteger currentTimes);
 
 - (void)_showWebViewWithAnimation {
     [self triggerWebViewEvent:HPKWebViewEventWillShow para1:nil para2:nil];
-    _hasShowWebView = YES;
     [UIView animateWithDuration:0.2
                      animations:^{
         self.webView.alpha = 1.0f;

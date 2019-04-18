@@ -25,7 +25,7 @@
 #import "NestingWebViewController.h"
 #import "ArticleModel.h"
 
-@interface NestingWebViewController ()<WKNavigationDelegate,UIScrollViewDelegate>
+@interface NestingWebViewController ()<HPKDefaultWebViewProtocol,UIScrollViewDelegate>
 @property (nonatomic, strong, readwrite) ArticleModel *articleModel;
 @property (nonatomic, strong, readwrite) UIScrollView *containerScrollView;
 @end
@@ -63,7 +63,7 @@
     })];
 
     [_componentHandler handleHybridPageWithContainerScrollView:_containerScrollView defaultWebViewClass:[HPKWebView class] defaultWebViewIndex:kHPKDemoComponentIndexWebView webComponentDomClass:@"web-component" webComponentIndexKey:@"component-index"];
-    _componentHandler.webView.navigationDelegate = self;  
+    _componentHandler.webView.navigationDelegate = [_componentHandler replaceExtensionDelegateWithOriginalDelegate:self];  
 }
 
 #pragma mark -
@@ -79,7 +79,7 @@
 }
 
 #pragma mark -
-- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+- (void)webViewDidFinishNavigation:(WKNavigation *)navigation {
     // custom webviewe delegate
     [_componentHandler layoutWithWebComponentModels:self.articleModel.webViewComponents];
     [_componentHandler layoutWithComponentModels:self.articleModel.extensionComponents];

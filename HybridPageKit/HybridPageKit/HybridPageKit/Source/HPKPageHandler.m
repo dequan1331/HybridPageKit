@@ -197,6 +197,7 @@ static inline SEL _getHPKControllerProtocolByEventType(HPKControllerEvent event)
         CGSize oldSize = [oldValue CGSizeValue];
         if (!CGSizeEqualToSize(oldSize, newSize)) {
             [self relayoutWithWebComponentChange];
+            [self relayoutWithComponentChange];
         }
     }];
 
