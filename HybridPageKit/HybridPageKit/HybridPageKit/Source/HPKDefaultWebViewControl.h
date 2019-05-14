@@ -55,4 +55,11 @@
  */
 - (void)resetWebView;
 
+/**
+ webView contentSize变化回调
+ */
+- (void)webviewContentSizeChange:(__kindof HPKWebView *)webView
+                         newSize:(CGSize)newSize
+                         oldSize:(CGSize)oldSize;
+
 @end

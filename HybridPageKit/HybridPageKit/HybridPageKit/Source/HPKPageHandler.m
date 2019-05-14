@@ -199,6 +199,7 @@ static inline SEL _getHPKControllerProtocolByEventType(HPKControllerEvent event)
             [self relayoutWithWebComponentChange];
             [self relayoutWithComponentChange];
         }
+        [self.defaultWebViewControl webviewContentSizeChange:self.webView newSize:newSize oldSize:oldSize];
     }];
 
     return _extensionDelegate;

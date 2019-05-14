@@ -82,6 +82,32 @@ IMP_HPKModelProtocol(@"")
     HPKInfoLog(@"HPKDefaultWebViewControl reset webview");
 }
 
+- (void)webviewContentSizeChange:(__kindof HPKWebView *)webView
+                         newSize:(CGSize)newSize
+                         oldSize:(CGSize)oldSize{
+    
+    if (webView != _defaultWebView) {
+        return;
+    }
+    
+    //文章长度小于一屏的，需要用js取高度，并且重新赋值
+    if (newSize.height <= _defaultWebView.bounds.size.height) {
+        NSString *jsString = [NSString stringWithFormat:@"document.documentElement.offsetHeight * %d / document.documentElement.clientWidth",(int)_defaultWebView.bounds.size.width];
+        [_defaultWebView evaluateJavaScript:jsString completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+            if (result && [result isKindOfClass:[NSNumber class]]) {
+                CGRect webViewframe = self.defaultWebView.frame;
+                CGSize webViewContentSize = self.defaultWebView.scrollView.contentSize;
+                CGFloat correctHeight = MIN(((NSNumber *)result).floatValue,self.handler.containerScrollView.frame.size.height);
+                webViewframe.size.height = correctHeight;
+                webViewContentSize.height = correctHeight;
+                self.defaultWebView.frame = webViewframe;
+                self.defaultWebView.scrollView.contentSize = webViewContentSize;
+                [self.handler relayoutWithComponentChange];
+            }
+        }];
+    }
+}
+
 #pragma mark - private method
 - (void)_commonInitWebView {
     _defaultWebView = nil;
