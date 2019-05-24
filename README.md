@@ -1,5 +1,10 @@
 # HybridPageKit
 
+![GitHub](https://img.shields.io/github/license/dequan1331/HybridPageKit.svg)
+![Cocoapods platforms](https://img.shields.io/cocoapods/p/HybridPageKit.svg)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/dequan1331/HybridPagekit.svg)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dequan1331/HybridPageKit.svg)
+
 [Extended Reading](https://dequan1331.github.io/index-en.html) | [中文](./README-CN.md) | [扩展阅读](https://dequan1331.github.io/)
 
 >**HybridPageKit** is a easy integration framework for Content pages of News App
