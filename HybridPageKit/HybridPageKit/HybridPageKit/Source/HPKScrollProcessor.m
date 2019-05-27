@@ -334,8 +334,8 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
         if (view) {
             if (![view isDescendantOfView:_scrollView]) {
                 [_scrollView addSubview:view];
-                [_onScrollViewComponentViews setObject:view forKey:componentIndex];
             }
+            [_onScrollViewComponentViews setObject:view forKey:componentIndex];
         } else {
             //防止刷新直接更换Model有重复view
             view = [_onScrollViewComponentViews objectForKey:componentIndex];
