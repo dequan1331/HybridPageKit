@@ -164,6 +164,11 @@ typedef NS_ENUM (NSInteger, HPKWebViewUAConfigType) {
  */
 + (void)fixWKWebViewMenuItems;
 
+/**
+ 禁止WKWebView双击
+ */
++ (void)disableWebViewDoubleClick;
+
 @end
 
 NS_ASSUME_NONNULL_END

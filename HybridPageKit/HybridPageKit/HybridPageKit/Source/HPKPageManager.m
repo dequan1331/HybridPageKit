@@ -94,4 +94,8 @@
     [WKWebView fixWKWebViewMenuItems];
 }
 
++ (void)disableWebViewDoubleClick{
+    [WKWebView disableWebViewDoubleClick];
+}
+
 @end

@@ -67,4 +67,8 @@ typedef NS_ENUM (NSInteger, ConfigUAType) {
 
 + (void)fixWKWebViewMenuItems;
 
+#pragma mark - disable double click
+
++ (void)disableWebViewDoubleClick;
+
 @end

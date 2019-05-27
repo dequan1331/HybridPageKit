@@ -303,4 +303,30 @@ static inline void clearWebViewCacheFolderByType(NSString *cacheType) {
     });
 }
 
++ (void)disableWebViewDoubleClick{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken,
+                  ^{
+                      Class cls = NSClassFromString([NSString stringWithFormat:@"%@%@%@%@", @"W", @"K", @"Content", @"View"]);
+                      if (cls) {
+                          SEL fixSel = NSSelectorFromString([NSString stringWithFormat:@"%@%@%@%@", @"_non", @"Blocking", @"DoubleTap", @"Recognized:"]);
+                          Method method = class_getInstanceMethod(cls, fixSel);
+                          
+                          NSCAssert(NULL != method,
+                                    @"Selector %@ not found in %@ methods of class %@.",
+                                    NSStringFromSelector(fixSel),
+                                    class_isMetaClass(cls) ? @"class" : @"instance",
+                                    cls);
+                          
+                          IMP newIMP = imp_implementationWithBlock( ^void(id _self, UITapGestureRecognizer *gestureRecognizer) {
+                              // do nothing
+                          });
+                          class_replaceMethod(cls, fixSel, newIMP,  method_getTypeEncoding(method));
+                      } else {
+                          HPKErrorLog(@"WKWebView (doubleClick) can not find valid class");
+                      }
+                  });
+}
+
+
 @end
