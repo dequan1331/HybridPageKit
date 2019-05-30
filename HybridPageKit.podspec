@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HybridPageKit"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "A high-performance、high-extensibility、easy integration framework for Hybrid content page. Support most content page types of News App."
   s.homepage     = "https://github.com/dequan1331/HybridPageKit"
   s.license      = "MIT"

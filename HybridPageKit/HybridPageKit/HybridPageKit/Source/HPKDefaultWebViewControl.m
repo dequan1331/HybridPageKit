@@ -95,14 +95,20 @@ IMP_HPKModelProtocol(@"")
         NSString *jsString = [NSString stringWithFormat:@"document.documentElement.offsetHeight * %d / document.documentElement.clientWidth",(int)_defaultWebView.bounds.size.width];
         [_defaultWebView evaluateJavaScript:jsString completionHandler:^(id _Nullable result, NSError * _Nullable error) {
             if (result && [result isKindOfClass:[NSNumber class]]) {
-                CGRect webViewframe = self.defaultWebView.frame;
-                CGSize webViewContentSize = self.defaultWebView.scrollView.contentSize;
-                CGFloat correctHeight = MIN(((NSNumber *)result).floatValue,self.handler.containerScrollView.frame.size.height);
-                webViewframe.size.height = correctHeight;
-                webViewContentSize.height = correctHeight;
-                self.defaultWebView.frame = webViewframe;
-                self.defaultWebView.scrollView.contentSize = webViewContentSize;
-                [self.handler relayoutWithComponentChange];
+                CGFloat jsHeight = ((NSNumber *)result).floatValue;
+                if (jsHeight > 0 && jsHeight < self.handler.containerScrollView.frame.size.height) {
+                    //已经调整过的不重复调整
+                    if(jsHeight == self.defaultWebView.frame.size.height){
+                        return;
+                    }
+                    CGRect webViewframe = self.defaultWebView.frame;
+                    webViewframe.size.height = jsHeight;
+                    CGSize webViewContentSize = self.defaultWebView.scrollView.contentSize;
+                    webViewContentSize.height = jsHeight;
+                    self.defaultWebView.frame = webViewframe;
+                    self.defaultWebView.scrollView.contentSize = webViewContentSize;
+                    [self.handler relayoutWithComponentChange];
+                }
             }
         }];
     }
