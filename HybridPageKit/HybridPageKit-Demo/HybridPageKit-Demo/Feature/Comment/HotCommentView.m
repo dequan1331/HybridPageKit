@@ -32,8 +32,8 @@
 
 IMP_HPKViewProtocol()
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style{
+    self = [super initWithFrame:frame style:style];
     if (self) {
         self.scrollEnabled = NO;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
@@ -58,6 +58,10 @@ IMP_HPKViewProtocol()
 
 - (CGFloat)componentHeight{
     return self.contentSize.height;
+}
+
+- (nullable UIScrollView *)componentInnerScrollView {
+    return self;
 }
 
 @end

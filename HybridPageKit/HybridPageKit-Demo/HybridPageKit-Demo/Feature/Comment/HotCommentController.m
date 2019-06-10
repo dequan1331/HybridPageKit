@@ -51,7 +51,7 @@
 
 - (nullable HPKView *)unReusableComponentViewWithModel:(HPKModel *)componentModel {
     if (!_hotCommentView) {
-        _hotCommentView = [[HotCommentView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0)];
+        _hotCommentView = [[HotCommentView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0) style:UITableViewStyleGrouped];
         _hotCommentView.delegate = self;
         _hotCommentView.dataSource = self;
         [_hotCommentView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
