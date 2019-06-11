@@ -51,6 +51,9 @@ IMP_HPKModelProtocol(@"")
 - (void)dealloc {
     HPKInfoLog(@"HPKDefaultWebViewControl dealloc with webview contentSize: %@, invalid: %@", NSStringFromCGSize(self.defaultWebView.scrollView.contentSize), @(self.defaultWebView.invalidForReuse));
     [[HPKWebViewPool sharedInstance] enqueueWebView:self.defaultWebView];
+    if(isiOS13Beta1){
+        [_defaultWebView.scrollView safeRemoveObserver:self keyPath:@"scrollEnabled"];
+    }
 }
 
 - (instancetype)initWithDetailHandler:(HPKPageHandler *)detailHandler
@@ -120,6 +123,19 @@ IMP_HPKModelProtocol(@"")
     _defaultWebView = [[HPKWebViewPool sharedInstance] dequeueWebViewWithClass:self.webViewClass webViewHolder:self];
     _defaultWebView.frame = CGRectMake(0, 0, self.handler.containerScrollView.frame.size.width, self.handler.containerScrollView.frame.size.height);
     _defaultWebView.scrollView.scrollEnabled = NO;
+    
+    // iOS13Beta1 WKWebView change scrollView scrollEnabled automaticlly in ‘WKWebView _didCommitLayerTree:’
+    // remove later
+    if(isiOS13Beta1){
+        __weak typeof(self)_self = self;
+        [_defaultWebView.scrollView safeAddObserver:self keyPath:@"scrollEnabled" callback:^(NSObject *oldValue, NSObject *newValue) {
+            __strong typeof(_self) self = _self;
+            BOOL scrollEnabled = ((NSNumber *)newValue).boolValue;
+            if(scrollEnabled){
+                self.defaultWebView.scrollView.scrollEnabled = NO;
+            }
+        }];
+    }
 }
 
 #pragma mark - HPKControllerProtocol

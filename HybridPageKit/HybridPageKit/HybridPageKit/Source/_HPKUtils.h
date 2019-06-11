@@ -49,4 +49,9 @@ typedef void (^HPKKVOCallback)(NSObject *oldValue, NSObject *newValue);
 - (void)safeRemoveAllObserver;
 @end
 
+#pragma mark -
+
+#define isiOS13Beta1 \
+    ([@"13.0" isEqualToString:[[UIDevice currentDevice] systemVersion]])
+
 #endif /* _HPKUtils_h */

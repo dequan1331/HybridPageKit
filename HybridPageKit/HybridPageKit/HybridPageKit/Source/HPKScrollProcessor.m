@@ -334,6 +334,7 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
         if (view) {
             if (![view isDescendantOfView:_scrollView]) {
                 [_scrollView addSubview:view];
+                [self _bringScrollViewIndicatorToFront];
             }
             [_onScrollViewComponentViews setObject:view forKey:componentIndex];
         } else {
@@ -344,6 +345,7 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
                 view = [[HPKCommonViewPool sharedInstance] dequeueComponentViewWithClass:viewCls];
                 [view setComponentViewId:componentIndex];
                 [_scrollView addSubview:view];
+                [self _bringScrollViewIndicatorToFront];
                 [_onScrollViewComponentViews setObject:view forKey:componentIndex];
             } else {
                 [[HPKCommonViewPool sharedInstance] resetVisibleComponentViewState:view];
@@ -493,6 +495,22 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
     y = MIN(y, _scrollView.contentSize.height - _scrollView.frame.size.height);
     [_scrollView setContentOffset:CGPointMake(toContentOffset.x, y) animated:animated];
     HPKInfoLog(@"HPKScrollProcessor has scrollto offsety:%@",@(y));
+}
+
+- (void)_bringScrollViewIndicatorToFront {
+    for(__kindof UIView *subView in _scrollView.subviews){
+        // before iOS13 indicator is UIImageView
+        Class indicatorClass;
+        if (@available(iOS 13, *)) {
+            indicatorClass = NSClassFromString([NSString stringWithFormat:@"%@%@%@",@"_UIScrollViewSc",@"rollIn",@"dicator"]);
+        }else{
+            indicatorClass = [UIImageView class];
+        }
+        // bring scroll indicator to front
+        if (indicatorClass && [subView isKindOfClass:indicatorClass]) {
+            [_scrollView bringSubviewToFront:subView];
+        }
+    }
 }
 
 #pragma mark -
