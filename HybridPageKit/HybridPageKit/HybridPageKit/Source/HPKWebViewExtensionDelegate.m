@@ -345,10 +345,6 @@ typedef void (^HPKRetryUtilsFailedBlock)(NSInteger currentTimes);
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
     }
-    if (navigationAction.navigationType == WKNavigationTypeLinkActivated) {
-        decisionHandler(WKNavigationActionPolicyCancel);
-        return;
-    }
 
     if ([self.originalDelegate respondsToSelector:@selector(webViewDecidePolicyForNavigationAction:decisionHandler:)]) {
         [self.originalDelegate webViewDecidePolicyForNavigationAction:navigationAction decisionHandler:decisionHandler];
