@@ -178,20 +178,6 @@
 #pragma clang diagnostic pop
         }
         
-        //优先使用WKWebView,防止UIWebView iOS12 Crash
-        if (!originalUserAgent || originalUserAgent.length <= 0) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored"-Wdeprecated-declarations"
-            UIWebView *webView;
-            @try {
-                webView = [[UIWebView alloc] init];
-#pragma clang diagnostic pop
-            } @catch (NSException *exception) {
-                HPKErrorLog(@"fail to initialize UIWebView.");
-            }
-            originalUserAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-        }
-
         NSString *appUserAgent =
             [NSString stringWithFormat:@"%@-%@", originalUserAgent, customString];
         NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys:appUserAgent, @"UserAgent", nil];
