@@ -40,6 +40,16 @@
 }
 
 - (void)_safeAsyncEvaluateJavaScriptString:(NSString *)script completionBlock:(_HPKWebViewJSCompletionBlock)block {
+    
+    if(![[NSThread currentThread] isMainThread]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //retain self
+            __unused __attribute__((objc_ownership(strong))) __typeof__(self) self_retain_ = self;
+            [self _safeAsyncEvaluateJavaScriptString:script completionBlock:block];
+        });
+        return;
+    }
+    
     if (!script || script.length <= 0) {
         HPKErrorLog(@"invalid script");
         if (block) {

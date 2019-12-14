@@ -150,7 +150,7 @@ typedef NS_ENUM (NSInteger, HPKWebViewUAConfigType) {
  @param customString 自定义UA字符串
  */
 + (void)configCustomUAWithType:(HPKWebViewUAConfigType)type
-                      UAString:(NSString *)customString;
+                      UAString:(NSString *)customString API_AVAILABLE(ios(9.0));
 
 /**
  清除全部的WKWebViewcache

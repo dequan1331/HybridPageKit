@@ -57,7 +57,7 @@ typedef NS_ENUM (NSInteger, ConfigUAType) {
 #pragma mark - UA
 
 + (void)configCustomUAWithType:(ConfigUAType)type
-                      UAString:(NSString *)customString;
+                      UAString:(NSString *)customString API_AVAILABLE(ios(9.0));
 
 #pragma mark - clear webview cache
 
