@@ -261,6 +261,8 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
         //已知frame模式下无需计算
         return;
     }
+    
+    _isLayouting = YES;
 
     //根据key排序
     NSArray *sortedKeys = [[[_allComponentsModels keyEnumerator] allObjects] sortedArrayUsingComparator:^NSComparisonResult (id _Nonnull obj1, id _Nonnull obj2) {
@@ -323,6 +325,8 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
         //已经滚动的要重新复位下subview中的scrollViews
         [self _layoutNestScrollingComponent];
     }
+    
+    _isLayouting = NO;
 }
 
 #pragma mark -  private

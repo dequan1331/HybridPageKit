@@ -54,6 +54,17 @@
         _hotCommentView = [[HotCommentView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 0) style:UITableViewStyleGrouped];
         _hotCommentView.delegate = self;
         _hotCommentView.dataSource = self;
+        _hotCommentView.tableHeaderView = ({
+            UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width , 30)];
+            [headerView addSubview:({
+                UILabel *label = [[UILabel alloc] initWithFrame:headerView.bounds];
+                label.backgroundColor = self.hotCommentView.backgroundColor;
+                label.textAlignment = NSTextAlignmentCenter;
+                label.text = @"TableView Header";
+                label;
+            })];
+            headerView;
+        });
         [_hotCommentView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     }
     return self.hotCommentView;
