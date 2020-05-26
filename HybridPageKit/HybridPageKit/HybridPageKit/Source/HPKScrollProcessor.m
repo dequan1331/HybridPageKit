@@ -60,6 +60,8 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
 
 @property (nonatomic, assign, readwrite) HPKLayoutType layoutType;
 @property (nonatomic, copy, readwrite) HPKScrollProcessorDelegateBlock scrollDelegateBlock;
+//接入方自定义模块排序规则
+@property (nonatomic, copy, readwrite) NSComparator customComparator;
 
 //全部的component models
 @property (nonatomic, strong, readwrite) NSMapTable<NSString *, HPKModel *> *allComponentsModels;
@@ -265,19 +267,7 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
     _isLayouting = YES;
 
     //根据key排序
-    NSArray *sortedKeys = [[[_allComponentsModels keyEnumerator] allObjects] sortedArrayUsingComparator:^NSComparisonResult (id _Nonnull obj1, id _Nonnull obj2) {
-        NSString *index1 = [obj1 isKindOfClass:[NSString class]] ? (NSString *)obj1 : @"";
-        NSString *index2 = [obj2 isKindOfClass:[NSString class]] ? (NSString *)obj2 : @"";
-
-        if (index1.integerValue < index2.integerValue) {
-            return NSOrderedAscending;
-        } else if (index1.integerValue > index2.integerValue) {
-            return NSOrderedDescending;
-        } else {
-            HPKFatalLog(@"Component Array can not same type");
-            return NSOrderedSame;
-        }
-    }];
+    NSArray *sortedKeys = [[[_allComponentsModels keyEnumerator] allObjects] sortedArrayUsingComparator:[self _componentModelsComparator]];
 
     CGFloat componentTop = 0.f;
     CGFloat contentSizeHeight = 0.f;
@@ -359,6 +349,26 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
         [_visibleComponentViews setObject:view forKey:componentIndex];
         view;
     });
+}
+
+- (NSComparator)_componentModelsComparator {
+    if (_customComparator) {
+        return _customComparator;
+    } else {
+        return ^NSComparisonResult (id _Nonnull obj1, id _Nonnull obj2) {
+            NSString *index1 = [obj1 isKindOfClass:[NSString class]] ? (NSString *)obj1 : @"";
+            NSString *index2 = [obj2 isKindOfClass:[NSString class]] ? (NSString *)obj2 : @"";
+
+            if (index1.integerValue < index2.integerValue) {
+                return NSOrderedAscending;
+            } else if (index1.integerValue > index2.integerValue) {
+                return NSOrderedDescending;
+            } else {
+                HPKFatalLog(@"Component Array can not same type");
+                return NSOrderedSame;
+            }
+        };
+    }
 }
 
 - (void)_enqueueViewOfModel:(HPKModel *)model removeUnReusableView:(BOOL)removeUnReusableView {
@@ -597,6 +607,10 @@ static inline SEL _getHPKScrollProtocolByEventType(HPKScrollEvent event) {
         //更新组件信息后，强制更新所有
         [self _detailComponentsDidUpdateWithOffsetTop:MAX(_scrollView.contentOffset.y, 0.f) forceLayout:YES];
     }
+}
+
+- (void)setCustomComponentModelsComparator:(NSComparator)customComparator {
+    _customComparator = [customComparator copy];
 }
 
 #pragma mark - scroll
