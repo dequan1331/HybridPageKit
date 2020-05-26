@@ -73,7 +73,8 @@
              @"1":@[@"2. Web Component Controller", @"替换WebView Dom元素为Native，支持滚动复用"],
              @"2":@[@"3. Native Component Controller", @"非Web类型底层页，多ScrollView滚动嵌套"],
              @"3":@[@"4. Nesting WebView Controller",@"典型内容页，WebView + Native多ScrollView滚动嵌套"],
-             @"4":@[@"5. Nseting Banner Controller",@"支持头部Banner及折叠收起"],
+             @"4":@[@"5. Nesting WebView Controller",@"典型内容页，自定义组件排序规则"],
+             @"5":@[@"6. Nseting Banner Controller",@"支持头部Banner及折叠收起"],
         };
     }
     return self;
@@ -113,6 +114,8 @@
     }else if (indexPath.row == 3){
         controller = [[NestingWebViewController alloc] init];
     }else if (indexPath.row == 4){
+        controller = [[NestingWebViewController alloc] initWithUseCustomComparator:YES];
+    }else if (indexPath.row == 5){
         controller = [[NestingBannerController alloc] init];
     }else{
         //error

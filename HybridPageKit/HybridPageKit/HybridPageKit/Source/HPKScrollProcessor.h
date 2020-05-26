@@ -52,6 +52,8 @@ typedef NS_ENUM (NSInteger, HPKLayoutType) {
 - (void)removeComponentModelAndRelayout:(HPKModel *)componentModel;
 - (void)layoutWithComponentModels:(NSArray <HPKModel *> *)componentModels;
 
+- (void)setCustomComponentModelsComparator:(NSComparator)customComparator;
+
 #pragma mark - scroll
 
 - (void)scrollToContentOffset:(CGPoint)toContentOffset animated:(BOOL)animated;

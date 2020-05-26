@@ -24,6 +24,7 @@
 
 #import "NestingWebViewController.h"
 #import "ArticleModel.h"
+#import "ArticleFeatureDef.h"
 
 @interface NestingWebViewController ()<HPKDefaultWebViewProtocol,UIScrollViewDelegate>
 @property (nonatomic, strong, readwrite) ArticleModel *articleModel;
@@ -31,10 +32,18 @@
 @end
 
 @implementation NestingWebViewController
+
 - (instancetype)init {
+    return [self initWithUseCustomComparator:NO];
+}
+
+- (instancetype)initWithUseCustomComparator:(BOOL)useCustomComparator {
     self = [super init];
     if (self) {
         _componentHandler = [[HPKPageHandler alloc] init];
+        if (useCustomComparator) {
+            [_componentHandler setCustomComponentModelsComparator:[self _buildCustomComparator]];
+        }
         [_componentHandler configWithViewController:self componentsControllers:@[[[VideoController alloc]initWithController:self],
                                                                                  [[GifController alloc]initWithController:self],
                                                                                  [[ImageController alloc]initWithController:self],
@@ -76,6 +85,31 @@
         [strongSelf.componentHandler.webView loadHTMLString:strongSelf.articleModel.contentTemplateString baseURL:nil];
         [strongSelf.componentHandler triggerBroadcastSelector:@selector(didReceiveArticleContent:) para1:strongSelf.articleModel para2:nil];
     }];
+}
+
+- (NSComparator)_buildCustomComparator {
+    static NSDictionary<NSString *, NSString *> *sortedIndex;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sortedIndex = @{
+            @(kHPKDemoComponentIndexAd).stringValue      : @"5",
+            @(kHPKDemoComponentIndexRelate).stringValue  : @"3",
+            @(kHPKDemoComponentIndexMedia).stringValue   : @"4",
+        };
+    });
+    return ^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        NSString *index1 = [obj1 isKindOfClass:[NSString class]] ? (NSString *)obj1 : @"";
+        NSString *index2 = [obj2 isKindOfClass:[NSString class]] ? (NSString *)obj2 : @"";
+        
+        index1 = [sortedIndex objectForKey:index1] ?: index1;
+        index2 = [sortedIndex objectForKey:index2] ?: index2;
+        
+        if (index1.integerValue < index2.integerValue) {
+            return NSOrderedAscending;
+        } else {
+            return NSOrderedDescending;
+        }
+    };
 }
 
 #pragma mark -

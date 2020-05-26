@@ -24,4 +24,5 @@
 
 @interface NestingWebViewController : UIViewController
 @property (nonatomic, strong, readwrite) HPKPageHandler *componentHandler;
+- (instancetype)initWithUseCustomComparator:(BOOL)useCustomComparator;
 @end

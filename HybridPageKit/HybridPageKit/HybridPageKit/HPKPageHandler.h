@@ -144,6 +144,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)getAllWebComponentDomFrameWithCompletionBlock:(HPKWebViewJSCompletionBlock)completionBlock;
 
+/**
+ 自定义组件排序规则, 如果不指定则默认使用integerValue排序
+
+ @param customComparator 自定义的排序规则
+ */
+- (void)setCustomComponentModelsComparator:(NSComparator)customComparator;
+
 #pragma mark - common method
 
 /**

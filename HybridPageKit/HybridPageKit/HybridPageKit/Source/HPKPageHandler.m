@@ -67,6 +67,7 @@ static inline SEL _getHPKControllerProtocolByEventType(HPKControllerEvent event)
 
 @property (nonatomic, strong, readwrite) HPKScrollProcessor *contentViewScrollHandler; //components滚动管理
 @property (nonatomic, strong, readwrite) HPKScrollProcessor *webViewScrollHandler;     //webComponents滚动管理
+@property (nonatomic, copy  , readwrite) NSComparator customComparator;                //接入方自定义模块排序规则
 
 @property (nonatomic, strong, readwrite) HPKDefaultWebViewControl *defaultWebViewControl;  //默认webview的生成与管理
 @property (nonatomic, strong, readwrite) HPKWebViewExtensionDelegate *extensionDelegate;   //webview extension delegate
@@ -139,6 +140,10 @@ static inline SEL _getHPKControllerProtocolByEventType(HPKControllerEvent event)
             return [self.componentControllerMap objectForKey:NSStringFromClass([model class])];
         }
     }];
+    //兼容在设置 ScrollView 之前设置组件比较规则
+    if (self.customComparator) {
+        [self.contentViewScrollHandler setCustomComponentModelsComparator:self.customComparator];
+    }
 }
 
 - (void)handleSingleWebView:(__kindof WKWebView *)webView
@@ -351,6 +356,11 @@ static inline SEL _getHPKControllerProtocolByEventType(HPKControllerEvent event)
         return;
     }
     [self.webView safeAsyncEvaluateJavaScriptString:jsStr completionBlock:completionBlock];
+}
+
+- (void)setCustomComponentModelsComparator:(NSComparator)customComparator {
+    self.customComparator = customComparator;
+    [self.contentViewScrollHandler setCustomComponentModelsComparator:customComparator];
 }
 
 #pragma mark -
