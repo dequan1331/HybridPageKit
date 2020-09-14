@@ -41,6 +41,7 @@ IMP_HPKViewProtocol()
             _titleLabel = [[UILabel alloc]init];
             _titleLabel.textColor = [UIColor blackColor];
             _titleLabel.font = [UIFont systemFontOfSize:36.f];
+            _titleLabel.numberOfLines = 0;
             _titleLabel;
         })];
 
@@ -56,8 +57,8 @@ IMP_HPKViewProtocol()
 
 - (void)layoutWithData:(TitleModel *)titleModel {
     [_titleLabel setText:titleModel.title];
+    _titleLabel.frame = CGRectMake(8, 20, [UIScreen mainScreen].bounds.size.width - (8 << 1), _titleLabel.frame.size.height);
     [_titleLabel sizeToFit];
-    _titleLabel.frame = CGRectMake(8, 20, _titleLabel.frame.size.width, _titleLabel.frame.size.height);
 
     [_timeLabel setText:[NSString stringWithFormat:@"%@", [NSDate date]]];
     [_timeLabel sizeToFit];
