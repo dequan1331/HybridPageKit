@@ -85,10 +85,21 @@
     
     self.navigationItem.title = @"HybridPageKit";
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
     self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:28.f/255.f green:135.f/255.f blue:219.f/255.f alpha:1.f];
-
+    
+    NSDictionary *titleTextAttributes = @{NSForegroundColorAttributeName: UIColor.whiteColor};
+    UIColor *barTintColor = [UIColor colorWithRed:28.f/255.f green:135.f/255.f blue:219.f/255.f alpha:1.f];
+    if (@available(iOS 15.0, *)) {
+        UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+        appearance.titleTextAttributes = titleTextAttributes;
+        appearance.backgroundColor = barTintColor;
+        self.navigationController.navigationBar.standardAppearance = appearance;
+        self.navigationController.navigationBar.scrollEdgeAppearance = appearance;
+    } else {
+        self.navigationController.navigationBar.titleTextAttributes = titleTextAttributes;
+        self.navigationController.navigationBar.barTintColor = barTintColor;
+    }
+    
     [self.view addSubview:({
         _collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:[[UICollectionViewFlowLayout alloc] init]];
         _collectionView.backgroundColor = [UIColor colorWithRed:238.f/255.f green:239.f/255.f blue:240.f/255.f alpha:1.f];;
