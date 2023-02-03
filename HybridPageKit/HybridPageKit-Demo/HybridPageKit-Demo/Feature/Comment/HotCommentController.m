@@ -74,7 +74,7 @@
     _hotCommentModel = articleModel.hotCommentModel;
 }
 
-- (void)webViewDidShow:(__kindof HPKWebView *)webView {
+- (void)webViewDidShowWithAnimation {
     // 如果是单独接口异步加载评论，在此执行
     // 防止接口和布局影响webview渲染，提高内容页展示速度
 }
