@@ -174,6 +174,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)scrollToComponentView:(HPKView *)elementView atOffset:(CGFloat)offsetY animated:(BOOL)animated;
 
 /**
+ *  滚动到对应的Model，以及Model相应的offset
+ */
+- (void)scrollToComponentModel:(HPKModel *)componentModel atOffset:(CGFloat)offsetY animated:(BOOL)animated;
+
+/**
  如果使用default webview，从pool中获取新webview，重置当前webview
  */
 - (void)resetDefaultWebView;
