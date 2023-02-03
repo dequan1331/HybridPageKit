@@ -404,6 +404,10 @@ static inline SEL _getHPKControllerProtocolByEventType(HPKControllerEvent event)
     [self.contentViewScrollHandler scrollToComponentView:elementView atOffset:offsetY animated:animated];
 }
 
+- (void)scrollToComponentModel:(HPKModel *)componentModel atOffset:(CGFloat)offsetY animated:(BOOL)animated {
+    [self.contentViewScrollHandler scrollToComponentModel:componentModel atOffset:offsetY animated:animated];
+}
+
 - (void)resetDefaultWebView {
     HPKInfoLog(@"HPKPageHandler begin reset default webview");
     [_contentViewScrollHandler removeComponentModelAndRelayout:_defaultWebViewControl.defaultWebViewModel];
